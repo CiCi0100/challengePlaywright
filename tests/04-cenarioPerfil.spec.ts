@@ -1,16 +1,29 @@
 import { test, expect } from '@playwright/test';
-import { time } from 'console';
+import { UserDTO } from '../dto/user_dto';
+import { CustomerLoginActions  } from '../steps/customerLogin';
+import { CustomerLogin } from '../page_objects/customerLogin';
 
 
 test.beforeEach(async({page}) => {
-  await page.goto('http://www.automationpractice.pl/index.php?');
-  await page.getByRole('link', { name: 'Sign in' }).click();
-  await page.locator('#email').click();
-  await page.locator('#email').fill('valentina_tatiane_dapaz@mailinator.com');
-  await page.getByLabel('Password').click();
-  await page.getByLabel('Password').fill('goosIlQNU4');
-  await page.getByRole('button', { name: ' Sign in' }).click();
+  const customerLogin = new CustomerLogin(page);  
+  const loginActions = new CustomerLoginActions(customerLogin);  
+  await loginActions.PageLogin();
+  
+  const userDTO: UserDTO = {
+    title: ' ',
+    firstName: ' ',
+    lastName: ' ',
+    email:'andreia-bernardes83@mailinator.com',
+    password: 'goosIlQNU4',
+    day: ' ',
+    months: ' ',
+    years: ' ',
+};
+
+  await loginActions.goToLogin(userDTO);
+
 });
+
 
 test('adicionar meu primeiro endereço', async ({ page }) => {
   await page.getByRole('link', { name: ' Add my first address' }).click();
@@ -33,8 +46,8 @@ test('adicionar meu primeiro endereço', async ({ page }) => {
   await page.getByRole('link', { name: ' Back to your account' }).click();
 });
 
+
 test('alterar dados do meu endereço', async({page}) => {
-  test.setTimeout(12000);
   await page.getByRole('link', { name: ' My addresses' }).click();
   await page.getByRole('link', { name: 'Update ' }).click();
   await page.getByLabel('City *').click();
@@ -46,8 +59,8 @@ test('alterar dados do meu endereço', async({page}) => {
   await page.getByRole('link', { name: ' Back to your account' }).click();
 });
 
+
 test('alterar dados do meu perfil', async({page}) => {
-  test.setTimeout(12000);
   await page.getByRole('link', { name: ' My personal information' }).click();
   await page.getByLabel('Current Password').click();
   await page.getByLabel('Current Password').fill('goosIlQNU4');
@@ -59,9 +72,4 @@ test('alterar dados do meu perfil', async({page}) => {
   await page.getByText('Your personal information has').click();
   await page.getByRole('link', { name: ' Back to your account' }).click();
 });
-
-
-
-
-
 

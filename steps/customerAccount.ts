@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from "playwright/test";
-import { UserDTO } from "../dto/user_dto";
+// import { UserDTO } from "../../dto/user_dto";
 
 export class customerAccount{
     page: Page;

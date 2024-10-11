@@ -6,6 +6,7 @@ export class UserDTO {
     day: string;
     months: string;
     years: string;
+    title: string;
 
   }
 
