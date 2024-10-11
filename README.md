@@ -5,21 +5,21 @@ Esse repositório contém testes automatizados focando na funcionalidades básic
 
 ### Principais funcionalidades 
 
--**Teste de login**
+- **Teste de login**
     - Verificação de login bem-sucedido com credenciais válidas.
--**Teste de cadastro**
+- **Teste de cadastro**
     - Verificação de cadastro bem-sucedido com credenciais válidas.
--**Teste de busca por produto**
+- **Teste de busca por produto**
     - Busca por produtos válidos.
--**Teste de adição de endereço**
+- **Teste de adição de endereço**
     - Validação da adição do primeiro endereço com credenciais corretas.
--**Teste alteração de dados**
+- **Teste alteração de dados**
     - Verificação da atualização de informações, como endereço e dados pessoais.
 
 ## Tecnologias utilizadas
-[node.js](https://nodejs.org/en/download/package-manager/current)
-[vscode](https://code.visualstudio.com/)
-[playwright](https://playwright.dev/)
+- [node.js](https://nodejs.org/en/about)
+- [vscode](https://code.visualstudio.com/)
+- [playwright](https://playwright.dev/)
 
 ### Pré requisitos
 Certifique de está instalado node, playwright e o visual studio code na sua máquina. Você pode verificar a versão do node.js, playwright usando o comando:
@@ -29,7 +29,7 @@ node --version
 
 ```
 ### Caso não tenha na sua máquina o node, basta clicar no link logo abaixo:
--[tutorial node]
+- [download node](https://nodejs.org/en/download/package-manager/current)
 
 ```bash
 # Clone na sua máquina local:
