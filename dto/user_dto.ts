@@ -7,11 +7,14 @@ export class UserDTO {
     months: string;
     years: string;
     title: string;
+    newPassword: string;
+    confirmationPassword: string;
 
   }
 
 export class ADRESS {
     phone: string;
+    mobilePhone: string;
     company: string;
     address: string;
     city: string;
@@ -19,16 +22,7 @@ export class ADRESS {
     zip: string;
     country: string;
     additionalInformation: string;
+    newAddress: string;
+    newPhone: string;
 
-}
-
-export class ChangeUserDTO {
-  currentPassword: string;
-  newPassword: string;
-  confirmationPassword: string;
-}
-
-export class ChangeAddress {
-  newAddress: string;
-  newPhone: string;
 }

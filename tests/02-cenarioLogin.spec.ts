@@ -17,11 +17,13 @@ test ('Login com sucesso', async ({page}) => {
         title: ' ',
         firstName: ' ',
         lastName: ' ',
-        email:'luzia-campos85@mailinator.com',
+        email:'regina.ana.rezende@mailinator.com',
         password: 'goosIlQNU4',
         day: ' ',
         months: ' ',
         years: ' ',
+        newPassword: ' ',
+        confirmationPassword: ' ',
     }
 
     const customerLogin = new CustomerLogin(page);  

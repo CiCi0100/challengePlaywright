@@ -18,11 +18,13 @@ test ('Cadastrar novo usuário', async ({ page }) => {
         title: 'Mrs',
         firstName: 'Alice',
         lastName: 'Daiane Carolina Lima',
-        email:'luzia-campos85@mailinator.com',
+        email:dateTime + 'jm@mailinator.com',
         password: 'goosIlQNU4',
         day: '11',
         months: '5',
         years: '1995',
+        newPassword: ' ',
+        confirmationPassword: ' ',
         
     }
     const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
@@ -45,6 +47,8 @@ test ('Validar campos obrigatórios', async ({page}) => {
         day: '11',
         months: '5',
         years: '1995',
+        newPassword: ' ',
+        confirmationPassword: ' ',
     }
 
     const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
