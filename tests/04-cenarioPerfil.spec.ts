@@ -17,7 +17,7 @@ test.beforeEach(async({page}) => {
     firstName: ' ',
     lastName: ' ',
     email:'brenda.debora@mailinator.com',
-    password: 'goosIlQNU4',
+    password: 'test123',
     day: ' ',
     months: ' ',
     years: ' ',
@@ -83,12 +83,12 @@ test('alterar dados do meu perfil', async({page}) => {
     firstName: ' ',
     lastName: ' ',
     email:' ',
-    password: 'goosIlQNU4',
+    password: 'test123',
     day: ' ',
     months: ' ',
     years: ' ',
-    newPassword: 'test123',
-    confirmationPassword: 'test123',
+    newPassword: 'goosIlQNU4',
+    confirmationPassword: 'goosIlQNU4',
 
 };
   await ChangePasswordActions.ChangeDetailsOfProfile(userDTO);

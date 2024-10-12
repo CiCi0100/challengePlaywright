@@ -18,7 +18,7 @@ test ('Cadastrar novo usuário', async ({ page }) => {
         title: 'Mrs',
         firstName: 'Alice',
         lastName: 'Daiane Carolina Lima',
-        email:'brenda.debora@mailinator.com',
+        email: dateTime + 'jm@mailinator.com',
         password: 'goosIlQNU4',
         day: '11',
         months: '5',
