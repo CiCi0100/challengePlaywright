@@ -17,7 +17,7 @@ test ('Login com sucesso', async ({page}) => {
         title: ' ',
         firstName: ' ',
         lastName: ' ',
-        email:'regina.ana.rezende@mailinator.com',
+        email:'brenda.debora@mailinator.com',
         password: 'goosIlQNU4',
         day: ' ',
         months: ' ',

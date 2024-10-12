@@ -12,6 +12,7 @@ export class ChangeDetailsActions {
     async addMyFirstAddress (Address : ADRESS) {
         const account = this.changeDetailsOfAccount;
 
+        await account.menuAddMyFirstAddress.waitFor({ state: 'visible' });
         await account.menuAddMyFirstAddress.click();
         await account.fieldAddress.click();
         await account.fieldAddress.fill(Address.address);
@@ -35,6 +36,7 @@ export class ChangeDetailsActions {
     async ChangeDetailsOfAddress (Address : ADRESS) {
         const account = this.changeDetailsOfAccount;
 
+        await account.menuMyAddresses.waitFor({ state: 'visible' });
         await account.menuMyAddresses.click();
         await account.fieldUpdateAddress.click();
         await account.fieldAddress.click();
@@ -48,6 +50,7 @@ export class ChangeDetailsActions {
     async ChangeDetailsOfProfile (ChangesUser : UserDTO) {
         const account = this.changeDetailsOfAccount;
 
+        await account.menuMyPersonalInformation.waitFor({ state: 'visible' });
         await account.menuMyPersonalInformation.click();
         await account.fieldCurrentPassword.click();
         await account.fieldCurrentPassword.fill(ChangesUser.password);

@@ -20,7 +20,9 @@ async PageLogin() {
 
         await account.emailLogin.fill(userDTO.email);
         await account.passwordLogin.fill(userDTO.password);
-        await account.signInButton.click();
+        for (let i = 0; i < 2; i++) {
+            await account.signInButton.click();
+          }
     };
 }
 
