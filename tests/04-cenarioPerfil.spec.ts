@@ -14,7 +14,12 @@ test.beforeEach(async({page}) => {
   const customerLogin = new CustomerLogin(page);  
   const loginActions = new CustomerLoginActions(customerLogin);  
   await loginActions.PageLogin();
-  
+
+});
+
+
+test('adicionar meu primeiro endereço', async ({ page }) => {
+
   const dateTime = Date.now();
   const userDTO: UserDTO = {
       title: 'Mrs',
@@ -35,10 +40,6 @@ test.beforeEach(async({page}) => {
   const custumerAccount = new customerAccount(page);
   await custumerAccount.ConfirmarCadastroFeito();
 
-});
-
-
-test('adicionar meu primeiro endereço', async ({ page }) => {
   const changeDetailsOfAccount = new ChangeDetailsOfAccount(page);
   const AddAddressActions = new ChangeDetailsActions(changeDetailsOfAccount);
   
@@ -60,6 +61,25 @@ test('adicionar meu primeiro endereço', async ({ page }) => {
 
 
 test('alterar dados do meu endereço', async({page}) => {
+  
+  const userDTO: UserDTO = {
+    title: ' ',
+    firstName: ' ',
+    lastName: ' ',
+    email:'carolina_camila@mailinator.com',
+    password: 'goosIlQNU4',
+    day: ' ',
+    months: ' ',
+    years: ' ',
+    newPassword: ' ',
+    confirmationPassword: ' ',
+}
+
+const customerLogin = new CustomerLogin(page);  
+const loginActions = new CustomerLoginActions(customerLogin);  
+
+await loginActions.goToLogin(userDTO); 
+
   const changeDetailsOfAccount = new ChangeDetailsOfAccount(page);
   const ChangeAddressActions = new ChangeDetailsActions(changeDetailsOfAccount);
 
@@ -82,22 +102,43 @@ test('alterar dados do meu endereço', async({page}) => {
 
 
 test('alterar dados do meu perfil', async({page}) => {
+  
+  const dateTime = Date.now();
+  const userDTO: UserDTO = {
+      title: 'Mrs',
+      firstName: 'Alice',
+      lastName: 'Daiane Carolina Lima',
+      email: dateTime + 'jm@mailinator.com',
+      password: 'goosIlQNU4',
+      day: '11',
+      months: '5',
+      years: '1995',
+      newPassword: ' ',
+      confirmationPassword: ' ',
+      
+  }
+  const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
+  const createAccount = new CreateAccountActions(createNewCustomerAccount);  
+  await createAccount.submitFormCreateAccount(userDTO);
+  const custumerAccount = new customerAccount(page);
+  await custumerAccount.ConfirmarCadastroFeito();
+
   const changeDetailsOfAccount = new ChangeDetailsOfAccount(page);
   const ChangePasswordActions =  new ChangeDetailsActions(changeDetailsOfAccount);
 
-  const userDTO: UserDTO = {
+  const userDTO1: UserDTO = {
     title: ' ',
     firstName: ' ',
     lastName: ' ',
     email:' ',
-    password: 'test123',
+    password: 'goosIlQNU4',
     day: ' ',
     months: ' ',
     years: ' ',
-    newPassword: 'goosIlQNU4',
-    confirmationPassword: 'goosIlQNU4',
+    newPassword: 'test123',
+    confirmationPassword: 'test123',
 
 };
-  await ChangePasswordActions.ChangeDetailsOfProfile(userDTO);
+  await ChangePasswordActions.ChangeDetailsOfProfile(userDTO1);
 });
 
