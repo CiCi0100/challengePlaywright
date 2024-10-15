@@ -16,7 +16,7 @@ test.beforeEach(async({page}) => {
     title: ' ',
     firstName: ' ',
     lastName: ' ',
-    email:'brenda.debora@mailinator.com',
+    email:'carolina_camila@mailinator.com',
     password: 'test123',
     day: ' ',
     months: ' ',

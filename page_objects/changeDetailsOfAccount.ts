@@ -25,7 +25,9 @@ export class ChangeDetailsOfAccount {
         this.fieldUpdateAddress = this.page.getByRole('link', { name: 'Update ' });
         this.fieldAddress = this.page.getByLabel('Address *');
         this.fieldCity = this.page.getByLabel('City *');
-        this.menuAddMyFirstAddress = this.page.getByRole('link', { name: ' Add my first address' });
+
+        this.menuAddMyFirstAddress = this.page.getByText("Add my first address");
+
         this.fieldCompany = this.page.getByLabel('Company');
         this.fieldState = this.page.getByLabel('State *');
         this.fieldZip = this.page.getByLabel('Zip/Postal Code *');
@@ -34,8 +36,11 @@ export class ChangeDetailsOfAccount {
         this.fieldAdditionalInformation = this.page.getByLabel('Additional information');
         this.fieldButtonSave = this.page.getByRole('button', { name: 'Save ' });
         this.fieldBackTo = this.page.getByRole('link', { name: ' Back to your account' });
+
         this.menuMyAddresses = this.page.getByRole('link', { name: ' My addresses' });
+
         this.menuMyPersonalInformation = this.page.getByRole('link', { name: ' My personal information' });
+
         this.fieldCurrentPassword = this.page.getByLabel('Current Password');
         this.fieldNewPassword = this.page.getByLabel('New Password');
         this.fieldConfirmationPassword = this.page.getByLabel('Confirmation');
