@@ -5,6 +5,9 @@ import { CustomerLoginActions  } from '../steps/customerLogin';
 import { CustomerLogin } from '../page_objects/customerLogin';
 import { ChangeDetailsOfAccount } from '../page_objects/changeDetailsOfAccount';
 import { ChangeDetailsActions } from '../steps/changeDetailsOfAccount';
+import { CreateAccountActions } from "../steps/createNewUserPage";
+import { customerAccount } from "../steps/customerAccount";
+import { CreateNewCustomerAccount } from "../page_objects/createNewUserPage";
 
 
 test.beforeEach(async({page}) => {
@@ -12,21 +15,25 @@ test.beforeEach(async({page}) => {
   const loginActions = new CustomerLoginActions(customerLogin);  
   await loginActions.PageLogin();
   
+  const dateTime = Date.now();
   const userDTO: UserDTO = {
-    title: ' ',
-    firstName: ' ',
-    lastName: ' ',
-    email:'carolina_camila@mailinator.com',
-    password: 'test123',
-    day: ' ',
-    months: ' ',
-    years: ' ',
-    newPassword: ' ',
-    confirmationPassword: ' ',
-
-};
-
-  await loginActions.goToLogin(userDTO);
+      title: 'Mrs',
+      firstName: 'Alice',
+      lastName: 'Daiane Carolina Lima',
+      email: dateTime + 'jm@mailinator.com',
+      password: 'goosIlQNU4',
+      day: '11',
+      months: '5',
+      years: '1995',
+      newPassword: ' ',
+      confirmationPassword: ' ',
+      
+  }
+  const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
+  const createAccount = new CreateAccountActions(createNewCustomerAccount);  
+  await createAccount.submitFormCreateAccount(userDTO);
+  const custumerAccount = new customerAccount(page);
+  await custumerAccount.ConfirmarCadastroFeito();
 
 });
 
