@@ -13,6 +13,10 @@ export class CreateNewCustomerAccount{
     fieldMonths: Locator;
     fieldYears: Locator;
     buttonRegister: Locator;
+    emailLogin: Locator;
+    passwordLogin: Locator;
+    signInButton: Locator;
+    forgotPasswordTxt: Locator;
 
     constructor(page: Page){
         this.page = page;
@@ -27,5 +31,8 @@ export class CreateNewCustomerAccount{
         this.fieldMonths = this.page.locator('#months');
         this.fieldYears =  this.page.locator('#years');
         this.buttonRegister = this.page.getByRole('button', { name: 'Register ' });
+        this.emailLogin = this.page.locator('#email');
+        this.passwordLogin = this.page.getByLabel('Password');
+        this.signInButton = this.page.getByRole('button', { name: ' Sign in' });
     }
 }

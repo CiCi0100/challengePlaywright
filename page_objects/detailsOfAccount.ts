@@ -44,6 +44,5 @@ export class ChangeDetailsOfAccount {
         this.fieldCurrentPassword = this.page.getByLabel('Current Password');
         this.fieldNewPassword = this.page.getByLabel('New Password');
         this.fieldConfirmationPassword = this.page.getByLabel('Confirmation');
-
     }
 }
