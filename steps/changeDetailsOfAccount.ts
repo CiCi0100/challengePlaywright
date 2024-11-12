@@ -15,9 +15,7 @@ export class ChangeDetailsActions {
         console.log("Dados do usuário:", user);
 
         await account.menuAddMyFirstAddress.waitFor({ state: 'visible' });
-        // for (let i = 0; i < 2; i++) {
         await account.menuAddMyFirstAddress.click();
-        // }
         await account.fieldAddress.click();
         await account.fieldAddress.fill(user.address);
         await account.fieldCity.click();

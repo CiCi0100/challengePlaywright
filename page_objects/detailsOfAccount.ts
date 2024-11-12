@@ -19,6 +19,7 @@ export class ChangeDetailsOfAccount {
     fieldNewPassword: Locator;
     fieldConfirmationPassword: Locator;
     fieldUpdateAddress: Locator;
+    MensagemCadastrofeitoComSucesso: Locator;
 
     constructor(page : Page){
         this.page = page;
@@ -44,5 +45,6 @@ export class ChangeDetailsOfAccount {
         this.fieldCurrentPassword = this.page.getByLabel('Current Password');
         this.fieldNewPassword = this.page.getByLabel('New Password');
         this.fieldConfirmationPassword = this.page.getByLabel('Confirmation');
+        this.MensagemCadastrofeitoComSucesso = this.page.getByPlaceholder(`xpath=//p[@class="alert alert-success"]`);
     }
 }

@@ -23,7 +23,7 @@ export function generateUser() {
       zip: generateZipCode(),
       additionalInformation: faker.lorem.paragraph(),
       newAddress: faker.location.streetAddress(),
-      newPhone: faker.phone.number(),
+      newPhone:`(98) ${faker.string.numeric(4)}-${faker.string.numeric(4)}`,
   };
   return user;
 }

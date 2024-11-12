@@ -14,11 +14,20 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
-
+  reporter: [
+    ['html', { outputFile: 'playwright-report/test-results.hml' }],
+    ['playwright-ctrf-json-reporter', {
+    outputFile: 'tests-results.json',
+    outputDir: 'playwright-report',
+    minimal: false,
+    screenshot: true
+    }]
+  ],
   use: {
-    screenshot: 'on',
     trace: 'on',
+    screenshot: 'on',
+    headless: false,
+    video: 'on'
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
@@ -70,4 +79,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
