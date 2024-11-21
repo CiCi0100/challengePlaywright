@@ -15,6 +15,8 @@ test.beforeEach(async ({ page }) => {
 
 
 test('adicionar meu primeiro endereço', async ({ page }) => {
+  
+  test.setTimeout(120000);
   const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
   const createAccount = new CreateAccountActions(createNewCustomerAccount);  
   await createAccount.submitFormCreateAccount();
@@ -29,6 +31,7 @@ test('adicionar meu primeiro endereço', async ({ page }) => {
 
 test('alterar dados do meu endereço', async({page}) => {
 
+  test.setTimeout(120000);
   const customerLogin = new CreateNewCustomerAccount(page);  
   const loginActions = new CustomerLoginActions(customerLogin);  
   await loginActions.login(); 

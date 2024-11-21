@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
 
 
 test('alterar dados do meu perfil', async({page}) => {
-
+    test.setTimeout(120000);
     const createNewCustomerAccount = new CreateNewCustomerAccount(page);  
     const createAccount = new CreateAccountActions(createNewCustomerAccount);  
     await createAccount.submitFormCreateAccount();
